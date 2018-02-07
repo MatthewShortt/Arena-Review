@@ -11,6 +11,7 @@ button {
 }
 
 /* To remove any pre-existing hover/focus/active effects */
+
 textarea:hover,
 input:hover,
 textarea:active,
@@ -141,7 +142,8 @@ main .container-form input {
     width: 100%;
 }
 
-main .container-form input.long-input, main .container-form input.name{
+main .container-form input.long-input,
+main .container-form input.name {
     border: 2px solid;
     border-radius: 4px;
 }
@@ -190,7 +192,7 @@ main button {
 .results-tabular {
     display: inline-block;
     width: 49%;
-    height: 50px;
+    /*    height: 50px;*/
     margin: 0px;
 
 }
@@ -235,12 +237,15 @@ main button {
 --- Individual Sample
 =========================== */
 
-.ind-stars{
-    margin: -15px auto 10px auto; /* margin: top right bottom left */
+.ind-stars {
+    margin: -15px auto 10px auto;
+    /* margin: top right bottom left */
 }
-.ind-stars table{
 
-    margin: 0px auto; /* margin: top right bottom left */
+.ind-stars table {
+
+    margin: 0px auto;
+    /* margin: top right bottom left */
 }
 
 .ind-stars .fa-star,
@@ -256,7 +261,7 @@ main button {
     margin: 0px;
 }
 
-.individual-sample-map, .individual-sample-specs {
+.individual-sample-map {
     display: inline-block;
     width: 100%;
     margin: 0px;
@@ -275,31 +280,37 @@ main button {
     margin: 0px auto;
 }
 
-table td.user{
+table td.user {
     width: 25%;
-    padding-bottom: 0px; !important
-    margin-bottom: 0px; !important
-}
-table td.user-stars{
-        vertical-align: baseline
+    padding-bottom: 0px;
+    !important margin-bottom: 0px;
+    !important
 }
 
-.spec-table{
+table td.user-stars {
+    vertical-align: baseline;
+}
+
+.spec-table {
     border: 1px solid;
-}
-.spec-table th{
-    background-color: white;
-    border-bottom: 2px solid ;
+    margin: 0px auto;
 }
 
-.spec-table tr:nth-child(odd){
+.spec-table th {
+    background-color: white;
+    border-bottom: 2px solid;
+}
+
+.spec-table tr:nth-child(odd) {
     background-color: white;
 }
-.spec-table tr:nth-child(even){
-    background-color: rgba(255,255,255,0.4);
+
+.spec-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.4);
 }
-.spec-table td:nth-child(even){
-    font-weight: 900;
+
+.spec-table td:nth-child(even) {
+    font-weight: bold;
 }
 
 /* ===========================
@@ -310,14 +321,68 @@ main .container-form input[type="file"] {
     font-size: 11px;
     margin: 0px auto;
     vertical-align: middle;
-    width: inherit
+    width: inherit;
+}
+#review-description{
+    width:75%;
+    height: 100px;
+}
+
+
+/* ===========================================================
+--- Media Queries Section
+=========================================================== */
+
+/* ===========================
+--- MQ - Individual Sample
+=========================== */
+
+@media (max-width:911px) {
+    .results-tabular,
+    .individual-rhs {
+        display: inline-block;
+        width: 100%;
+    }
+    .individual-rhs {
+        border-top: 4px solid;
+        padding-top: 20px;
+        text-align: center;
+    }
+
 }
 
 
 /* ===========================
---- Media Queries
+--- MQ - Results Sample
 =========================== */
 
-@media (max-width:768){
-    
+@media (max-width:911px) {
+    .results-map {
+        display: inline-block;
+        width: 100%;
+        border-top: 4px solid;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+
+}
+
+/* ===========================
+--- MQ - Submission
+=========================== */
+
+@media (max-width:778px){
+    main .container-form {
+        width=100%;
+    }
+    #review-description {
+        width=95%;
+        height:150px;
+    }
+}
+@media (max-width:611px){
+    #review-description {
+        height:175px;
+    }
 }
