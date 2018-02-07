@@ -20,8 +20,9 @@ button:focus,
 button:active,
 button:hover,
 label:focus,
+label:hover,
 .btn:active,
-.btn.active {
+.btn:active {
     outline: 0px !important;
     -webkit-appearance: none;
 }
@@ -116,7 +117,9 @@ footer .foot-right {
 footer .foot-right p i {}
 
 
-/***  REGISTRATION PAGE  ***/
+/* ===========================
+--- Registration
+=========================== */
 
 main h1 {
     text-align: center;
@@ -140,17 +143,27 @@ main .container-form input {
 }
 
 main .container-form input:focus {
-    border-color: #01FF70;
+    /*    border-color: #01FF70;*/
 }
 
 main .container-form input.name {
     width: 40%;
 }
+
 main .container-form input.gender {
     width: 20%;
 }
-main .container-form input.gender:hover {
+
+
+/* Attempt to make a flexbox containing the three radio options but it resulted in all options available to be clicked at once */
+
+/*
+main .container-form div.gender-flexbox{
+    background-color: aqua;
+    display: flex;
+    align-items: stretch;
 }
+*/
 
 main button {
     color: white;
@@ -163,3 +176,50 @@ main button {
     margin: 10px;
     font-size: 15px;
 }
+
+
+
+/* ===========================
+--- Sample Results
+=========================== */
+
+.results-tabular {
+    display: inline-block;
+    width: 49%;
+    height: 50px;
+    margin: 0px;
+
+}
+
+.results-map {
+    display: inline-block;
+    float: right;
+    width: 49%;
+    margin: 0px;
+}
+
+.results-map iframe{
+    height: 700px;
+    width: 95%;
+    margin: 0px auto;
+}
+
+.results-tabular table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.results-tabular tr:nth-child(odd) {
+    border-top: 2px solid #001f3f;
+}
+
+.results-tabular table img{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px 5px;
+}
+.results-tabular .fa-star, .fa-star-half{
+    color: #FF851B;
+}
+

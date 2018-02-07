@@ -45,20 +45,22 @@
             <div class="container-form">
                 <h1>Register New Account</h1>
                 <form>
-                    <input class="name" type="text" placeholder="first name*">
-                    <input class="name" type="text" placeholder="last name*">
-                    <input class="name" type="text" placeholder="username*">
-                    <input class="name" type="password" placeholder="password*">
-                    <input type="email" placeholder="email*">
-                    <input type="date">
+                    <input class="name" type="text" name="firstname" placeholder="first name*">
+                    <input class="name" type="text" name="lastname" placeholder="last name*">
+                    <input class="name" type="text" name="username" placeholder="username*">
+                    <input class="name" type="password" name="userpw"placeholder="password*">
+                    <input type="email" name="useremail" placeholder="email*">
+                    <input type="date" name="dob">
 
-                    <label for="male">Male</label>
-                    <input class="gender" type="radio" value="male">
-                    <label for="female">Female</label>
-                    <input class="gender" type="radio" value="female">
-                    <label for="other">Other</label>
-                    <input class="gender" type="radio" value="other">
+
+                    <label for="male">Male<input class="gender" type="radio" name="gender" id="male" value="male"></label>
                     
+                    <label for="female">Female</label>
+                    <input class="gender" type="radio" name="gender" id="female" "female">
+                    <label for="other">Other</label>
+                    <input class="gender" type="radio" name="gender" id="other" value="other">
+
+
 
                 </form>
                 <button>SUBMIT</button>
