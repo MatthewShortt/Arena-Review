@@ -1,16 +1,31 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 header {
+/*
     grid-area: header;
-    margin: -8px -8px auto -8px;
     background-color: #001f3f;
     height: 50px;
+*/
+    background-color: #001f3f;
+    color: white;
+    flex: 0 1 50px;
 }
 
 main {
+/*
     grid-area: main;
     background-color: orange;
+*/
+    background-color: orange;
+    flex: 1 1 auto;
 }
 
 footer {
+/*
     grid-area: footer;
     background-color: green;
     position: absolute;
@@ -20,11 +35,20 @@ footer {
     padding: 1rem;
     background-color: #efefef;
     text-align: center;
+*/
+    background-color: green;
+    flex: 0 1 40px;
 }
 
 .container {
+/*
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: auto;
     grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
+*/
+    
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 }
