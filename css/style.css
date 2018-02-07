@@ -243,19 +243,31 @@ main button {
     margin: 0px auto; /* margin: top right bottom left */
 }
 
-
 .ind-stars .fa-star,
 .ind-stars .fa-star-half {
     color: #FF851B;
     padding: 0px;
 }
 
-.individual-sample-map {
+.individual-rhs {
     display: inline-block;
     float: right;
     width: 49%;
     margin: 0px;
 }
+
+.individual-sample-map, .individual-sample-specs {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+}
+
+.individual-sample-specs {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+}
+
 
 .individual-sample-map iframe {
     height: 350px;
@@ -272,6 +284,24 @@ table td.user-stars{
         vertical-align: baseline
 }
 
+.spec-table{
+    border: 1px solid;
+}
+.spec-table th{
+    background-color: white;
+    border-bottom: 2px solid ;
+}
+
+.spec-table tr:nth-child(odd){
+    background-color: white;
+}
+.spec-table tr:nth-child(even){
+    background-color: rgba(255,255,255,0.4);
+}
+.spec-table td:nth-child(even){
+    font-weight: 900;
+}
+
 /* ===========================
 --- Submission
 =========================== */
@@ -281,4 +311,13 @@ main .container-form input[type="file"] {
     margin: 0px auto;
     vertical-align: middle;
     width: inherit
+}
+
+
+/* ===========================
+--- Media Queries
+=========================== */
+
+@media (max-width:768){
+    
 }
