@@ -10,6 +10,7 @@ button {
     font-family: 'Titillium Web', sans-serif;
 }
 
+/* To remove any pre-existing hover/focus/active effects */
 textarea:hover,
 input:hover,
 textarea:active,
