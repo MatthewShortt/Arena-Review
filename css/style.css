@@ -91,11 +91,11 @@ nav .nav-title {
     flex-grow: 6;
 }
 
-nav .nav-submission,
+nav .nav-review,
 nav .nav-search,
-nav .nav-enter-search,
+nav .nav-favs,
 nav .nav-user {
-    flex-grow: 1;
+    flex-grow: 0.7;
 }
 
 footer .foot-left {
@@ -140,6 +140,10 @@ main .container-form input {
     font-size: 20px;
     margin: 10px;
     width: 100%;
+}
+
+main .container-form input.long-input {
+    margin: 10px auto;
 }
 
 main .container-form input.long-input,
@@ -412,4 +416,21 @@ main .container-form input[type="file"] {
         width: 100%;
     }
 
+}
+
+/* ===========================
+--- MQ - Header/Nav
+=========================== */
+
+@media (max-width: 630px) {
+    .nav-block {
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    nav .nav-title {
+        padding-left: 10px;
+        font-size: 20px;
+    }
 }
