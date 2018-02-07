@@ -136,10 +136,13 @@ main .container-form {
 main .container-form input {
     background-color: transparent;
     font-size: 20px;
-    border: 2px solid;
-    border-radius: 4px;
     margin: 10px;
     width: 100%;
+}
+
+main .container-form input.long-input, main .container-form input.name{
+    border: 2px solid;
+    border-radius: 4px;
 }
 
 main .container-form input:focus {
@@ -268,3 +271,13 @@ table td.user-stars{
         vertical-align: baseline
 }
 
+/* ===========================
+--- Submission
+=========================== */
+
+main .container-form input[type="file"] {
+    font-size: 11px;
+    margin: 0px auto;
+    vertical-align: middle;
+    width: inherit
+}

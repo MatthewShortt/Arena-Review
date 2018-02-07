@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Matthew Shortt">
+    <meta name="description" content="Website that allows users to contribute and view reviews on sports arenas.">
+
+    <title>Arena Review</title>
+
+
+    <!--     favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-title"><i class="fas fa-rocket"></i><a href="">Arena Review</a></div>
+                <!--                <div class="nav-submission"> Submit a Review</div>-->
+                <div class="nav-search">
+                    <form>
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+
+                </div>
+                <!--                <div class="nav-enter-search"><i class="fas fa-search"></i></div>-->
+                <div class="nav-user"><i class="fas fa-user-circle"></i></div>
+            </nav>
+        </header>
+
+        <main>
+
+
+            <div class="container-form">
+                <h1>Write a Review</h1>
+                <form>
+                    <input class="long-input" type="text" name="arena-name" placeholder="arena name"><br><br>
+                    <label for="review-description">Description of the Arena:</label><br>
+                    <textarea name="comments" id="review-description" cols="100" rows="10"></textarea><br><br>
+                    <input class="file-up" type="file" name="image"><br><br>
+
+
+
+                </form>
+                <button>SUBMIT</button>
+            </div>
+
+
+
+        </main>
+
+        <footer>
+            <div class="foot-left">
+                <p>&copy; 2018</p>
+            </div>
+            <div class="foot-center">
+                <p><a href="">Site map</a></p>
+            </div>
+            <div class="foot-right">
+                <p>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-twitter-square"></i></a>
+                </p>
+
+            </div>
+        </footer>
+    </div>
+</body>
