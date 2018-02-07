@@ -2,6 +2,28 @@ html,
 body {
     height: 100%;
     margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+input,
+button {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+    outline: 0px !important;
+    -webkit-appearance: none;
 }
 
 a {
@@ -20,7 +42,7 @@ a {
 }
 
 header {
-    font-family: Copperplate-Light, Copperplate, Copperplate Gothic Light, Copperplate Gothic, Arial, sans-serif;
+    /*    font-family: Copperplate-Light, Copperplate, Copperplate Gothic Light, Copperplate Gothic, Arial, sans-serif;*/
     background-color: #001f3f;
     color: white;
     flex: 0 1 5vh;
@@ -29,6 +51,10 @@ header {
 main {
     background-color: #DDDDDD;
     flex: 1 1 auto;
+    /*
+    display: flex;
+    align-items: center;
+*/
 }
 
 footer {
@@ -69,21 +95,66 @@ nav .nav-user {
     flex-grow: 1;
 }
 
-footer .foot-left{
+footer .foot-left {
     width: 33%;
     float: left;
 }
-footer .foot-center{
+
+footer .foot-center {
     width: 33%;
     float: left;
     text-align: center;
 }
-footer .foot-right{
+
+footer .foot-right {
     /*font-size: 30px;*/
     width: 33%;
     float: right;
-    text-align: right; 
+    text-align: right;
 }
-footer .foot-right p i{
-    
+
+footer .foot-right p i {}
+
+
+/***  REGISTRATION PAGE  ***/
+
+main h1 {
+    text-align: center;
+}
+
+main .container-form {
+    /*        background-color: #13232f;*/
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+main .container-form input {
+    background-color: transparent;
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: 4px;
+    margin: 10px;
+    width: 100%;
+}
+
+main .container-form input:focus {
+    border-color: #01FF70;
+}
+
+main .container-form input.name {
+    width: 40%;
+}
+
+main button {
+    color: white;
+    font-weight: bold;
+    background-color: #001f3f;
+    height: 50px;
+    width: 65%;
+    border: 1px #001f3f;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 15px;
 }
