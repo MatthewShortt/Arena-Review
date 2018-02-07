@@ -323,8 +323,9 @@ main .container-form input[type="file"] {
     vertical-align: middle;
     width: inherit;
 }
-#review-description{
-    width:75%;
+
+#review-description {
+    width: 75%;
     height: 100px;
 }
 
@@ -372,17 +373,43 @@ main .container-form input[type="file"] {
 --- MQ - Submission
 =========================== */
 
-@media (max-width:778px){
+@media (max-width:778px) {
     main .container-form {
         width=100%;
     }
     #review-description {
         width=95%;
-        height:150px;
+        height: 150px;
     }
 }
-@media (max-width:611px){
+
+@media (max-width:611px) {
     #review-description {
-        height:175px;
+        height: 175px;
     }
+}
+
+/* ===========================
+--- MQ - Registration
+=========================== */
+
+@media (max-width:655px) {
+    main .container-form input.gender {
+        width: 10%;
+    }
+
+}
+
+@media (max-width:380px) {
+    main .container-form input.gender {
+        width: 5%;
+    }
+
+}
+
+@media (max-width:372px) {
+    main .container-form input.name {
+        width: 100%;
+    }
+
 }
