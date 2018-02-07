@@ -146,6 +146,11 @@ main .container-form input:focus {
 main .container-form input.name {
     width: 40%;
 }
+main .container-form input.gender {
+    width: 20%;
+}
+main .container-form input.gender:hover {
+}
 
 main button {
     color: white;
