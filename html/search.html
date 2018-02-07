@@ -18,7 +18,7 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -41,30 +41,25 @@
 
         <main>
 
-
             <div class="container-form">
-                <h1>Register New Account</h1>
+                <h1>Search</h1>
                 <form>
-                    <input class="name" type="text" name="firstname" placeholder="first name*">
-                    <input class="name" type="text" name="lastname" placeholder="last name*">
-                    <input class="name" type="text" name="username" placeholder="username*">
-                    <input class="name" type="password" name="userpw"placeholder="password*">
-                    <input type="email" name="useremail" placeholder="email*">
-                    <input type="date" name="dob">
 
-
-                    <label for="male">Male<input class="gender" type="radio" name="gender" id="male" value="male"></label>
-                    
-                    <label for="female">Female</label>
-                    <input class="gender" type="radio" name="gender" id="female" "female">
-                    <label for="other">Other</label>
-                    <input class="gender" type="radio" name="gender" id="other" value="other">
-
-
+                    <input type="text" placeholder="Search.." name="search">
+                    <select name="ratings">
+                       <option value="default">Select a Rating</option>
+                        <option value="5-stars">5 stars</option>
+                        <option value="4-stars">4 stars</option>
+                        <option value="3-stars">3 stars</option>
+                        <option value="2-stars">2 stars</option>
+                        <option value="1-star">1 star</option>
+                        <option value="0-stars">0 stars</option>
+                    </select>
 
                 </form>
                 <button>SUBMIT</button>
             </div>
+
 
 
 
