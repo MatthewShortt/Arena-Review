@@ -378,7 +378,7 @@ main .container-form input[type="file"] {
 
 @media (max-width:778px) {
     main .container-form {
-        width:100%;
+/*        width:100%;*/
     }
     #review-description {
         width:95%;
