@@ -23,6 +23,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/client-side.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApMRmb_Fdi3xbnlz8K_P65LvNPbWXnRBc&callback=initMapInd"></script>
 </head>
 
 <body>
@@ -109,7 +113,9 @@
             </div>
             <div class="individual-rhs">
                 <div class="individual-sample-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.700744122468!2d-78.9449637842756!3d43.86203094691915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4e1e30208ce93%3A0x9190cfdc7eb7db3!2sIroquois+Park+Sports+Centre!5e0!3m2!1sen!2sca!4v1518012741914" style="border:0" allowfullscreen></iframe>
+                        <!-- OLD MAP -->
+                        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.700744122468!2d-78.9449637842756!3d43.86203094691915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4e1e30208ce93%3A0x9190cfdc7eb7db3!2sIroquois+Park+Sports+Centre!5e0!3m2!1sen!2sca!4v1518012741914" style="border:0" allowfullscreen></iframe>-->
+                        <div id="map-ind"></div>
                 </div>
                 <div class="individual-sample-specs">
                     <table class="spec-table">

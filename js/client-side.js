@@ -31,10 +31,11 @@ $(document).ready(function () {
     }
 });
 
-/* ===========================
---- Results Map Configuration
-=========================== */
 
+
+/* ======================================================
+--- Results Map Configuration
+====================================================== */
 //function is called from results_sample
 function initMap() {
 
@@ -143,5 +144,26 @@ function initMap() {
     //add listener for click function to pop infowindow up
     marker_vipond.addListener('click', function () {
         infowindow_vipond.open(map, marker_vipond);
+    });
+}
+
+/* ======================================================
+--- Individual Sample Map Configuration
+====================================================== */
+function initMapInd() {
+    //setting coordinates to center the map around (--> center about individual object in this case)
+    var center = {
+        lat: 43.8620,
+        lng: -78.9428
+    };
+    //initializing map inside div with ID '#map-ind', setting zoom level and centering location
+    var map = new google.maps.Map(document.getElementById('map-ind'), {
+        zoom: 16, //the higher the number, the more zoomed in you are (--> in this case we zoom in a bit because we have narrowed our search)
+        center: center
+    });    
+    //placing marker on individual result map
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
     });
 }

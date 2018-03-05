@@ -299,7 +299,7 @@ div .input-with-button .input-loc{
 }
 
 
-.individual-sample-map iframe {
+.individual-sample-map iframe, #map-ind {
     height: 350px;
     width: 95%;
     margin: 0px auto;
