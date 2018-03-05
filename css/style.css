@@ -54,10 +54,6 @@ header {
 main {
     background-color: #DDDDDD;
     flex: 1 1 auto;
-    /*
-    display: flex;
-    align-items: center;
-*/
 }
 
 footer {
@@ -75,12 +71,9 @@ header nav {
 
 header nav > div {
     line-height: 5vh;
-    /*    background-color: dodgerblue;*/
     color: white;
     margin: 0 10px;
     text-align: center;
-
-
 }
 
 nav .nav-title {
@@ -179,14 +172,42 @@ main button {
     color: white;
     font-weight: bold;
     background-color: #001f3f;
-    height: 50px;
-    width: 65%;
     border: 1px #001f3f;
     border-radius: 10px;
+}
+
+button.button-submit{
+    height: 50px;
+    width: 65%;
     margin: 10px;
     font-size: 15px;
 }
 
+/* ===========================
+--- Search
+=========================== */
+
+div .input-with-button {
+    display: flex;
+    align-items: stretch;
+}
+
+div .iwb-1{
+    flex-grow: 5;
+}
+div .iwb-2{
+    flex-grow: 1;
+}
+div .input-with-button .input-loc{
+    border: 2px solid;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+.button-loc{
+    line-height: 35px; /* May want to remove this */
+    font-size: 20px;
+    margin: 0 10px;
+}
 
 
 /* ===========================
