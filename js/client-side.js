@@ -50,52 +50,98 @@ function initMap() {
         center: center
     });
 
-
-    var contentString = '<div class="infobox">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">Iroquois Park Sports Centre</h1>' +
-        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
-        '</div>' +
-        '</div>';
-
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-
+    
+    /* ===========================
+    --- Arena 1 (Iroquois)
+    =========================== */
+    
     //setting coordinates for arena 1 (Iroquois Park Sports Centre)
     var coords_iroquois = {
         lat: 43.8620,
         lng: -78.9428,
         title: 'Iroquois'
     };
-    //setting coordinates for arena 2 (McKinney Centre)
-    var coords_mckinney = {
-        lat: 43.9208,
-        lng: -78.9553
-    };
-    //setting coordinates for arena 3 (Luther Vipond Memorial Arena)
-    var coords_vipond = {
-        lat: 43.9542,
-        lng: -78.9558
-    };
+    //infobox for arena 1 -- contents filled
+    var infobox_iroquois = '<div class="infobox">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<h1 id="firstHeading" class="firstHeading">Iroquois Park Sports Centre</h1>' +
+        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '</div>' +
+        '</div>';
+    //setting contents to an Google Maps infowindow container
+    var infowindow_iroquois = new google.maps.InfoWindow({
+        content: infobox_iroquois
+    });
     //placing marker on map for arena 1 (Iroquois Park Sports Centre)
     var marker_iroquois = new google.maps.Marker({
         position: coords_iroquois,
         map: map
     });
-    
+    //add listener for click function to pop infowindow up
     marker_iroquois.addListener('click', function () {
-        infowindow.open(map, marker_iroquois);
+        infowindow_iroquois.open(map, marker_iroquois);
+    });
+
+            
+    /* ===========================
+    --- Arena 2 (McKinney)
+    =========================== */
+    //setting coordinates for arena 2 (McKinney Centre)
+    var coords_mckinney = {
+        lat: 43.9208,
+        lng: -78.9553
+    };
+    //infobox for arena 2 -- contents filled
+    var infobox_mckinney = '<div class="infobox">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<h1 id="firstHeading" class="firstHeading">McKinney Centre</h1>' +
+        '<div id="bodyContent">' + '222 McKinney Dr<br>' + '<a href="tel:905-655-2203">(905) 655-2203</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '</div>' +
+        '</div>';
+    //setting contents to an Google Maps infowindow container
+    var infowindow_mckinney = new google.maps.InfoWindow({
+        content: infobox_mckinney
     });
     //placing marker on map for arena 2 (McKinney Centre)
     var marker_mckinney = new google.maps.Marker({
         position: coords_mckinney,
         map: map
     });
+    //add listener for click function to pop infowindow up
+    marker_mckinney.addListener('click', function () {
+        infowindow_mckinney.open(map, marker_mckinney);
+    });
+    
+    
+    /* ===========================
+    --- Arena 3 (Vipond)
+    =========================== */
+    //setting coordinates for arena 3 (Luther Vipond Memorial Arena)
+    var coords_vipond = {
+        lat: 43.9542,
+        lng: -78.9558
+    };
+    //infobox for arena 3 -- contents filled
+    var infobox_vipond = '<div class="infobox">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<h1 id="firstHeading" class="firstHeading">Luther Vipond Memorial Arena</h1>' +
+        '<div id="bodyContent">' + '67 Winchester Rd<br>' + '<a href="tel:905-655-4571">(905) 655-4571</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '</div>' +
+        '</div>';
+    //setting contents to an Google Maps infowindow container
+    var infowindow_vipond = new google.maps.InfoWindow({
+        content: infobox_vipond
+    });
     //placing marker on map for arena 3 (Luther Vipond Memorial Arena)
     var marker_vipond = new google.maps.Marker({
         position: coords_vipond,
         map: map
+    });
+    //add listener for click function to pop infowindow up
+    marker_vipond.addListener('click', function () {
+        infowindow_vipond.open(map, marker_vipond);
     });
 }
