@@ -2,15 +2,23 @@ $(document).ready(function () {
     console.log("ready!");
     var globalLat = -25.363;
     var globalLong = 131.044;
-    $(".button-submit").click(function () {
-        var test = $("#tester");
-        test.html("Handler for .click() called.");
+    
+    //event listener for click on button with class '.button-fill-coords' which triggers function
+    //that call geolocation grabber
+    $(".button-fill-coords").click(function (){
+        $(".button-fill-coords").html("Grabbing Location...");
         hello();
     });
+//    
+//    $(".button-submit").click(function () {
+//        var test = $("#tester");
+//        test.html("Handler for .click() called.");
+//        hello();
+//    });
 
     function hello() {
         if (navigator.geolocation) {
-            alert("hello1");
+            $(".button-fill-coords").html("Fetching Values...");
             navigator.geolocation.getCurrentPosition(showPosition, showError);
         } else {
             test.html("Geolocation not supported on this browser.");
@@ -19,11 +27,15 @@ $(document).ready(function () {
     }
 
     function showPosition(position) {
-        alert("Success!!");
+        $(".button-fill-coords").html("Success...");
+        alert("Success, longitude and latitude of your present location obtained.");
         $("#tester").html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
         if (position.coords.latitude > 43.2 && position.coords.latitude < 43.3 && position.coords.longitude < -79.8 && position.coords.longitude > -79.9) {
             alert("Hamilton!");
         }
+        $("#submit-lat").val(position.coords.latitude);
+        $("#submit-long").val(position.coords.longitude);
+        $(".button-fill-coords").html("Present Location used for Lat/Long");
     }
 
     function showError(error) {

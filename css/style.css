@@ -183,6 +183,13 @@ button.button-submit{
     font-size: 15px;
 }
 
+button.button-fill-coords{
+    height: 35px;
+    width: 75%;
+    margin: 10px;
+    font-size: 13px;
+}
+
 /* ===========================
 --- Search
 =========================== */

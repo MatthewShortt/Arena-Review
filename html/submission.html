@@ -22,6 +22,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/client-side.js"></script>
 </head>
 
 <body>
@@ -42,16 +45,18 @@
             <div class="container-form">
                 <h1>Write a Review</h1>
                 <form>
-                    <input class="long-input" type="text" name="arena-name" placeholder="arena name"><br><br>
+                    <input class="long-input" type="text" required name="arena-name" placeholder="arena name"><br><br> <!-- --> 
                     <label for="review-description">Description of the Arena:</label><br>
-                    <textarea name="comments" id="review-description"></textarea><br><br>
+                    <textarea name="comments" required id="review-description"></textarea><br><br>  <!-- --> 
+                    <input id="submit-lat" class="name" type="number" required min="-90" max="90" step="0.00000000000001" name="latitude" placeholder="latitude*">  <!-- --> 
+                    <input id="submit-long" class="name" type="number" required min="-180" max="180" step="0.00000000000001" name="longitude" placeholder="longitude*"><br><br>  <!-- --> 
                     <label for="img-up">Upload an Image:</label><br>
                     <input class="file-up" id="img-up" type="file" name="image"><br><br>
 
 
-
-                </form>
                 <button class="button-submit">SUBMIT</button>
+                </form>
+                <button class="button-fill-coords">** Use Location for Lat/Long **</button>
             </div>
 
 
