@@ -2,40 +2,51 @@ $(document).ready(function () {
     console.log("ready!");
     var globalLat = -25.363;
     var globalLong = 131.044;
+
+    var href = document.location.href;
+    var lastPathSegment = href.substr(href.lastIndexOf('/') + 1); //to find which html page we are on
+    //console.log(lastPathSegment); //for testing purposes
     
     //event listener for click on button with class '.button-fill-coords' which triggers function
     //that call geolocation grabber
-    $(".button-fill-coords").click(function (){
+    $(".button-fill-coords").click(function () {
         $(".button-fill-coords").html("Grabbing Location...");
-        hello();
+        getPosition();//call getPosition function
     });
-//    
-//    $(".button-submit").click(function () {
-//        var test = $("#tester");
-//        test.html("Handler for .click() called.");
-//        hello();
-//    });
 
-    function hello() {
+    //getPosition uses geolocation and can return many values, of which we used longitude and latitude
+    function getPosition() {
         if (navigator.geolocation) {
             $(".button-fill-coords").html("Fetching Values...");
             navigator.geolocation.getCurrentPosition(showPosition, showError);
         } else {
             test.html("Geolocation not supported on this browser.");
         }
-        console.log("bonjour...");
+//        console.log("bonjour..."); //fpr testing purposes
     }
 
+    //display the coordinates or the city 
     function showPosition(position) {
         $(".button-fill-coords").html("Success...");
-        alert("Success, longitude and latitude of your present location obtained.");
-        $("#tester").html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
-        if (position.coords.latitude > 43.2 && position.coords.latitude < 43.3 && position.coords.longitude < -79.8 && position.coords.longitude > -79.9) {
-            alert("Hamilton!");
+        //alert("Success, longitude and latitude of your present location obtained.");
+        //$("#tester").html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+        
+        //if else depending on which page we are on, filling input values based on present location
+        if (lastPathSegment == 'submission.html') {
+            $("#submit-lat").val(position.coords.latitude);
+            $("#submit-long").val(position.coords.longitude);
+            $(".button-fill-coords").html("Present Location used for Lat/Long");
+        } else if (lastPathSegment == 'search.html') {
+            if (position.coords.latitude > 43.2 && position.coords.latitude < 43.3 && position.coords.longitude < -79.8 && position.coords.longitude > -79.9) {
+                $("#loc-city").val('Hamilton, Ontario');
+            }
+            else{
+                $("#loc-city").val('Outside of Hamilton');
+            }
+            $(".button-fill-coords").html("Present Location used for City");
         }
-        $("#submit-lat").val(position.coords.latitude);
-        $("#submit-long").val(position.coords.longitude);
-        $(".button-fill-coords").html("Present Location used for Lat/Long");
+
+        
     }
 
     function showError(error) {
@@ -63,11 +74,11 @@ function initMap() {
         center: center
     });
 
-    
+
     /* ===========================
     --- Arena 1 (Iroquois)
     =========================== */
-    
+
     //setting coordinates for arena 1 (Iroquois Park Sports Centre)
     var coords_iroquois = {
         lat: 43.8620,
@@ -79,7 +90,7 @@ function initMap() {
         '<div id="siteNotice">' +
         '</div>' +
         '<h1 id="firstHeading" class="firstHeading">Iroquois Park Sports Centre</h1>' +
-        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
         '</div>' +
         '</div>';
     //setting contents to an Google Maps infowindow container
@@ -96,7 +107,7 @@ function initMap() {
         infowindow_iroquois.open(map, marker_iroquois);
     });
 
-            
+
     /* ===========================
     --- Arena 2 (McKinney)
     =========================== */
@@ -110,7 +121,7 @@ function initMap() {
         '<div id="siteNotice">' +
         '</div>' +
         '<h1 id="firstHeading" class="firstHeading">McKinney Centre</h1>' +
-        '<div id="bodyContent">' + '222 McKinney Dr<br>' + '<a href="tel:905-655-2203">(905) 655-2203</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '<div id="bodyContent">' + '222 McKinney Dr<br>' + '<a href="tel:905-655-2203">(905) 655-2203</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
         '</div>' +
         '</div>';
     //setting contents to an Google Maps infowindow container
@@ -126,8 +137,8 @@ function initMap() {
     marker_mckinney.addListener('click', function () {
         infowindow_mckinney.open(map, marker_mckinney);
     });
-    
-    
+
+
     /* ===========================
     --- Arena 3 (Vipond)
     =========================== */
@@ -141,7 +152,7 @@ function initMap() {
         '<div id="siteNotice">' +
         '</div>' +
         '<h1 id="firstHeading" class="firstHeading">Luther Vipond Memorial Arena</h1>' +
-        '<div id="bodyContent">' + '67 Winchester Rd<br>' + '<a href="tel:905-655-4571">(905) 655-4571</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' + 
+        '<div id="bodyContent">' + '67 Winchester Rd<br>' + '<a href="tel:905-655-4571">(905) 655-4571</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
         '</div>' +
         '</div>';
     //setting contents to an Google Maps infowindow container
@@ -172,7 +183,7 @@ function initMapInd() {
     var map = new google.maps.Map(document.getElementById('map-ind'), {
         zoom: 16, //the higher the number, the more zoomed in you are (--> in this case we zoom in a bit because we have narrowed our search)
         center: center
-    });    
+    });
     //placing marker on individual result map
     var marker = new google.maps.Marker({
         position: center,
