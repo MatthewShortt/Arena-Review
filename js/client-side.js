@@ -1,10 +1,9 @@
-window.addEventListener("DOMContentLoaded", function(event){
-    var x = document.getElementById("tester");
-    var button = document.getElementsByClassName("button-loc");
-    button.addEventListener("click", function(e){
-        alert('hello');
-    });
+$(document).ready(function() {
+    console.log( "ready!" );
+    
+    function test(){
+        alert("Button CLiekced");
+    }
 });
-
 
 
