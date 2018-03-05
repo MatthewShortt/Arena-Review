@@ -251,7 +251,7 @@ div .input-with-button .input-loc{
     margin: 0px;
 }
 
-.results-map iframe {
+.results-map iframe, #map {
     height: 700px;
     width: 95%;
     margin: 0px auto;
@@ -351,6 +351,14 @@ main .container-form input[type="file"] {
 #review-description {
     width: 75%;
     height: 100px;
+}
+
+/* ===========================
+--- Dynamic Map
+=========================== */
+
+/* InfoBox */
+.infobox{
 }
 
 
