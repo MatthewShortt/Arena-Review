@@ -96,46 +96,6 @@ if(isset($_POST['user_login'])){
     
 }
 
-//if(isset($_POST['user_search'])){        
-//    $name     = $_POST['search'];
-//    $rating   = $_POST['ratings'];
-//    $location = $_POST['location'];
-//    
-////      if (empty($username)) {
-////        array_push($errors, "Username is required");
-////      }
-////      if (empty($password)) {
-////        array_push($errors, "Password is required");
-////      }
-//
-//    //$exist_search = 0;
-//    if (count($errors) == 0) {
-//
-//        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        try{
-//            $search_result = $pdo->prepare('SELECT * FROM `objects` WHERE `name` LIKE %:name% OR `rating`= :rating OR `city` LIKE %:location% OR `state` LIKE %:location% OR `country` LIKE %:location%');
-//            $user->execute(array(
-//            "name" => $name,
-//            "rating" => $rating,
-//            "location" => $location
-//            ));
-//            
-//            $num_results = $search_result->rowCount()
-//
-//        } catch (PDOException $e){
-//            echo $e->getMessage();
-//        }
-//
-//    }
-//    if($num_results > 0){
-//        header('location: results.php');
-//    } else {
-//        header('location: search.php');
-//    }
-//
-//    
-//}
-
 ?>
 
 

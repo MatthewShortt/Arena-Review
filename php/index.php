@@ -33,7 +33,6 @@
             </div>
             
             
-<!--
               <table>
   <tr>
     <th>Puppy Name</th>
@@ -71,50 +70,64 @@
     <td>Italy</td>
   </tr>
 
-  </table>
--->
 <!--
+                          <td><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </td>
+-->
+
          <?php 
-  	$pdo = new PDO('mysql:host=localhost;dbname=rinkdb', 'admin_rinkdb', 'rinkmaster');
-//  	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//  	try{
-//  		$result = $pdo->query('SELECT `username` FROM `users`;');
-//  	} catch (PDOException $e){
-//  		echo $e->getMessage();
-//  	}
+  	$pdo = new PDO('mysql:host=localhost;dbname=puppies', 'puppy2', 'puppy2');
+  	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  	try{
+  		$result = $pdo->query('SELECT * FROM `animals`, `breeds` WHERE `animals`.`breed_id` = `breeds`.`id`;');
+  	} catch (PDOException $e){
+  		echo $e->getMessage();
+  	}
   	
-//  	foreach($result as $puppy){
-//  		echo("<tr>
-//    		<td>".$puppy['username']."</td>
-//  		</tr>");
-//
-//  	}
+  	foreach($result as $puppy){
+        $test = $puppy[puppy_name]; 
+        $test .= ", ";
+        $test .= $puppy[puppy_name];
+  		echo("<tr><td>".$test."</td><td>");
+            for($x=0; $x < $puppy[breed_id]; $x++){
+                echo("<i class='fas fa-star'></i>");
+            }
+                
+
+        echo("</td><td>".$puppy[breed_id]."</td></tr>");
+
+  	}
         
-        $username = "HelenK123";
-        //$salt = "4b3503675fea6";
-        $password = "helenk";
-        $email = "helenkeller@me.com";
-        $fname = "helen";
-        $sname = "keller";
-        $dob = "1942-06-18";
-        $gender = "1";
-            
-        $salt = bin2hex(random_bytes(20));
-        
-        $statement = $pdo->prepare("INSERT INTO `users`(`username`, `salt`, `passwordhash`, `email`, `fname`, `sname`, `dob`, `gender`) VALUES(:username, :salt, SHA2(CONCAT(:password, :salt), 0), :email, :fname, :sname, :dob, :gender)");
-        $statement->execute(array(
-            "username" => $username,
-            "salt" => $salt,
-            "password" => $password,
-            "email" => $email,
-            "fname" => $fname,
-            "sname" => $sname,
-            "dob" => $dob,
-            "gender" => $gender
-        ));
+//        $username = "HelenK123";
+//        //$salt = "4b3503675fea6";
+//        $password = "helenk";
+//        $email = "helenkeller@me.com";
+//        $fname = "helen";
+//        $sname = "keller";
+//        $dob = "1942-06-18";
+//        $gender = "1";
+//            
+//        $salt = bin2hex(random_bytes(20));
+//        
+//        $statement = $pdo->prepare("INSERT INTO `users`(`username`, `salt`, `passwordhash`, `email`, `fname`, `sname`, `dob`, `gender`) VALUES(:username, :salt, SHA2(CONCAT(:password, :salt), 0), :email, :fname, :sname, :dob, :gender)");
+//        $statement->execute(array(
+//            "username" => $username,
+//            "salt" => $salt,
+//            "password" => $password,
+//            "email" => $email,
+//            "fname" => $fname,
+//            "sname" => $sname,
+//            "dob" => $dob,
+//            "gender" => $gender
+//        ));
 
   ?>
--->
+        </table>
+
         </main>
         <footer>
             <div class="foot-left">
