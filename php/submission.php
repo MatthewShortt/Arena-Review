@@ -2,26 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Matthew Shortt">
-    <meta name="description" content="Website that allows users to contribute and view reviews on sports arenas.">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
-
-    <title>Arena Review</title>
-
-
-    <!--     favicon  -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <?php include('./head.inc.php'); ?>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/client-side.js"></script>
@@ -31,11 +12,11 @@
     <div class="container">
         <header>
             <nav>
-                <div class="nav-title"><a href="./index.html"><i class="fas fa-rocket"></i>Arena Review</a></div>
-                <div class="nav-review"><a href="./submission.html"><i class="fas fa-pencil-alt"></i><span class="nav-block"> Write Review</span></a></div>
+                <div class="nav-title"><a href="./index.php"><i class="fas fa-rocket"></i>Rink Review</a></div>
+                <div class="nav-review"><a href="./submission.php"><i class="fas fa-pencil-alt"></i><span class="nav-block"> Write Review</span></a></div>
                 <div class="nav-favs"><a href="#"><i class="far fa-star"></i><span class="nav-block"> My Favs</span></a></div>
-                <div class="nav-search"><a href="./search.html"><i class="fas fa-search"></i><span class="nav-block"> Search</span></a></div>
-                <div class="nav-user"><a href="#"><i class="fas fa-user-circle"></i></a></div>
+                <div class="nav-search"><a href="./search.php"><i class="fas fa-search"></i><span class="nav-block"> Search</span></a></div>
+                <div class="nav-user"><a href="./registration.php"><i class="fas fa-user-circle"></i></a></div>
             </nav>
         </header>
 
