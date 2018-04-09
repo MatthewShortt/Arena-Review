@@ -51,6 +51,56 @@ function validate(form) {
     return true;
 }
 
+//this is called onsubmit, from the form in registration.html
+//function is checking if every input is correct and filled out
+function validateLogin(form1) {
+    var firstname = form1.firstname.value; //grabbing first name
+    var lastname = form1.lastname.value; //grabbing last name
+    var username = form1.username.value; //grabbing username
+    var password = form1.userpw.value; //grabbing password
+    var email = form1.useremail.value; //grabbing email address
+    var dob = form1.dob.value; //grabbing date of birth
+
+    //in order, we check if all our values are inputted correctly
+    if (!validateName(firstname)) { //calling validateName function with parameter firstname to check validity
+        alert("No First Name Entered.");
+        return false;
+    } else if (!validateName(lastname)) { //calling validateName function with parameter lastname to check validity
+        alert("No Last Name Entered.");
+        return false;
+    } else if (!validateName(username)) { //calling validateName function with parameter username to check validity
+        alert("No Username Entered.");
+        return false;
+    } else if (!validatePassword(password)) { //calling validatePassword function with password given in the form to check validity (for now, if the password is at least 5 characters long)
+        alert("Password must be at least 5 characters long.");
+        return false;
+    } else if (!validateEmail(email)) { //calling validateEmail which using regex checks validity of input
+        alert("Email Entered Incorrectly.");
+        return false;
+    } else if (!validateDate(dob)) { //calling validateDate function which also uses regex to check validity of input
+        alert("Date Entered Incorrectly.");
+        return false;
+    }
+    
+    
+//console.log statements for debugging
+//    console.log(firstname);
+//    console.log(lastname);
+//    console.log(username);
+//    console.log(password);
+//    console.log(email);
+//    console.log(dob);
+//
+//    alert();
+    return true;
+}
+
+
+
+
+
+
+
 //validation method for email
 function validateEmail(email) {
     //regex below chacks if email is valid or not

@@ -6,7 +6,7 @@
     <?php include('./head.inc.php'); ?>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/validation.js"></script>
+    <script src="../js/validation_login.js"></script>
 </head>
 
 <body>
@@ -25,49 +25,17 @@
 
 
             <div class="container-form">
-                <h1>Register New Account</h1>
-                <form onsubmit="return validate(this)" id="form_register">
-                    <input class="name" type="text" name="firstname" placeholder="first name*">
-                    <input class="name" type="text" name="lastname" placeholder="last name*">
+                <h1>Login</h1>
+                <form onsubmit="return validate(this)" method="POST" action="login.php">
+
                     <input class="name" type="text" name="username" placeholder="username*">
                     <input class="name" type="password" name="userpw" placeholder="password*">
-                    <input class="long-input" name="useremail" placeholder="email*"> <!-- took out type email to test regex -->
-                    <input class="long-input" type="date" name="dob">
 
-
-                    <label for="male">Male<input class="gender" type="radio" name="gender" id="male" value="male"></label>
-                    
-                    <label for="female">Female</label>
-                    <input class="gender" type="radio" name="gender" id="female" value="female">
-                    <label for="other">Other</label>
-                    <input class="gender" type="radio" name="gender" id="other" value="other">
-
-
-                    <button name="registers" id="button-register" class="button-submit">SUBMIT</button>
+                    <button id="button-login" class="button-submit">Login</button>
                 </form>
                 
             </div>
-        
-<!--
-        <?php 
-  	$pdo = new PDO('mysql:host=localhost;dbname=rinkdb', 'admin_rinkdb', 'rinkmaster');
-  	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  	try{
-  		$result = $pdo->query('SELECT `puppy_name`, `breed_name`, `description` FROM `animals`, `breeds` WHERE `animals`.`breed_id` = `breeds`.`id`;');
-  	} catch (PDOException $e){
-  		echo $e->getMessage();
-  	}
-  	
-  	foreach($result as $puppy){
-  		echo("<tr>
-    		<td>".$puppy['puppy_name']."</td>
-    		<td>".$puppy['breed_name']."</td>
-    		<td>".$puppy['description']."</td>
-  		</tr>");
 
-  	}
-  ?>
--->
 
 
         </main>
