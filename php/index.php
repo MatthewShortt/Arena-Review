@@ -50,6 +50,7 @@
                 <button class="button-submit"><a href="./results_sample.html"><i class="fas fa-object-ungroup"></i><span> Results Page</span></a></button>
                 
             </div>
+<!--
               <table>
   <tr>
     <th>Puppy Name</th>
@@ -107,6 +108,7 @@
   ?>
 
   </table>
+-->
         </main>
         <footer>
             <div class="foot-left">
