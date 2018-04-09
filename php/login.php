@@ -26,17 +26,15 @@
 
             <div class="container-form">
                 <h1>Login</h1>
-                <form onsubmit="return validate(this)" method="POST" action="login.php">
+                <form method="post" action="login.php" onsubmit="return validate(this)">
 
                     <input class="name" type="text" name="username" placeholder="username*">
                     <input class="name" type="password" name="userpw" placeholder="password*">
 
-                    <button id="button-login" class="button-submit">Login</button>
+                    <button style="submit" name="user_login" id="button-login" class="button-submit">Login</button>
                 </form>
                 
             </div>
-
-
 
         </main>
 

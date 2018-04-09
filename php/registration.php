@@ -1,7 +1,6 @@
 <?php include('./server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php include('./head.inc.php'); ?>
     
@@ -10,6 +9,7 @@
 </head>
 
 <body>
+   
     <div class="container">
         <header>
             <nav>
@@ -22,11 +22,13 @@
         </header>
 
         <main>
-
+        
+            
 
             <div class="container-form">
                 <h1>Register New Account</h1>
-                <form onsubmit="return validate(this)" id="form_register">
+                <form method="post" action="registration.php" onsubmit="return validate(this)" id="form_register">
+                       <?php include('./errors.php'); ?>
                     <input class="name" type="text" name="firstname" placeholder="first name*">
                     <input class="name" type="text" name="lastname" placeholder="last name*">
                     <input class="name" type="text" name="username" placeholder="username*">
@@ -35,15 +37,15 @@
                     <input class="long-input" type="date" name="dob">
 
 
-                    <label for="male">Male<input class="gender" type="radio" name="gender" id="male" value="male"></label>
+                    <label for="male">Male<input class="gender" type="radio" name="gender" id="male" value="0"></label>
                     
                     <label for="female">Female</label>
-                    <input class="gender" type="radio" name="gender" id="female" value="female">
+                    <input class="gender" type="radio" name="gender" id="female" value="1">
                     <label for="other">Other</label>
-                    <input class="gender" type="radio" name="gender" id="other" value="other">
+                    <input class="gender" type="radio" name="gender" id="other" value="2">
 
 
-                    <button name="registers" id="button-register" class="button-submit">SUBMIT</button>
+                    <button type="submit" name="reg_user" id="button-register" class="button-submit">SUBMIT</button>
                 </form>
                 
             </div>

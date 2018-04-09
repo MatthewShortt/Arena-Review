@@ -1,3 +1,4 @@
+<?php include('./server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,17 +25,17 @@
 
             <div class="container-form">
                 <h1>Search</h1>
-                <form>
+                <form  method="post" action="search.php">
 
                     <input class="long-input" type="text" required placeholder="Search.." name="search"><br><br>
                     <select name="ratings">
                        <option value="default">Select a Rating</option>
-                        <option value="5-stars">5 stars</option>
-                        <option value="4-stars">4 stars</option>
-                        <option value="3-stars">3 stars</option>
-                        <option value="2-stars">2 stars</option>
-                        <option value="1-star">1 star</option>
-                        <option value="0-stars">0 stars</option>
+                        <option value="5">5 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="2">2 stars</option>
+                        <option value="1">1 star</option>
+                        <option value="0">0 stars</option>
                     </select><br><br>
                     
                     <input id="loc-city" class="long-input" type="text" placeholder="Location (Default Current Loc.)" name="location"><br><br>
@@ -45,7 +46,7 @@
                         <div class="iwb-2"><button class="button-loc">My Loc.</button></div>
                     </div>
 -->
-                <button class="button-submit">SUBMIT</button>
+                <button type="submit" name="user_search" class="button-submit">SUBMIT</button>
                 </form>
                 <button class="button-fill-coords">** Use Current Location **</button>
                 

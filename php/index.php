@@ -26,7 +26,7 @@
                 <h3>The following pages can be inidvidually viewed:</h3>
                 <button class="button-submit"><a href="./registration.php"><i class="fas fa-object-ungroup"></i><span> Registration</span></a></button>
                 <button class="button-submit"><a href="./search.php"><i class="fas fa-object-ungroup"></i><span> Search</span></a></button>
-                <button class="button-submit"><a href="./sample.php"><i class="fas fa-object-ungroup"></i><span> Object Page</span></a></button>
+                <button class="button-submit"><a href="./object.php"><i class="fas fa-object-ungroup"></i><span> Object Page</span></a></button>
                 <button class="button-submit"><a href="./submission.php"><i class="fas fa-object-ungroup"></i><span> Submission</span></a></button>
                 <button class="button-submit"><a href="./results.php"><i class="fas fa-object-ungroup"></i><span> Results Page</span></a></button>
 
@@ -71,26 +71,49 @@
     <td>Italy</td>
   </tr>
 
-  <?php 
-  	$pdo = new PDO('mysql:host=localhost;dbname=puppies', 'puppies_admin', 'puppies');
-  	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  	try{
-  		$result = $pdo->query('SELECT `puppy_name`, `breed_name`, `description` FROM `animals`, `breeds` WHERE `animals`.`breed_id` = `breeds`.`id`;');
-  	} catch (PDOException $e){
-  		echo $e->getMessage();
-  	}
-  	
-  	foreach($result as $puppy){
-  		echo("<tr>
-    		<td>".$puppy['puppy_name']."</td>
-    		<td>".$puppy['breed_name']."</td>
-    		<td>".$puppy['description']."</td>
-  		</tr>");
-
-  	}
-  ?>
-
   </table>
+-->
+<!--
+         <?php 
+  	$pdo = new PDO('mysql:host=localhost;dbname=rinkdb', 'admin_rinkdb', 'rinkmaster');
+//  	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//  	try{
+//  		$result = $pdo->query('SELECT `username` FROM `users`;');
+//  	} catch (PDOException $e){
+//  		echo $e->getMessage();
+//  	}
+  	
+//  	foreach($result as $puppy){
+//  		echo("<tr>
+//    		<td>".$puppy['username']."</td>
+//  		</tr>");
+//
+//  	}
+        
+        $username = "HelenK123";
+        //$salt = "4b3503675fea6";
+        $password = "helenk";
+        $email = "helenkeller@me.com";
+        $fname = "helen";
+        $sname = "keller";
+        $dob = "1942-06-18";
+        $gender = "1";
+            
+        $salt = bin2hex(random_bytes(20));
+        
+        $statement = $pdo->prepare("INSERT INTO `users`(`username`, `salt`, `passwordhash`, `email`, `fname`, `sname`, `dob`, `gender`) VALUES(:username, :salt, SHA2(CONCAT(:password, :salt), 0), :email, :fname, :sname, :dob, :gender)");
+        $statement->execute(array(
+            "username" => $username,
+            "salt" => $salt,
+            "password" => $password,
+            "email" => $email,
+            "fname" => $fname,
+            "sname" => $sname,
+            "dob" => $dob,
+            "gender" => $gender
+        ));
+
+  ?>
 -->
         </main>
         <footer>
