@@ -69,13 +69,13 @@ function initMap() {
     console.log("WOOOOOO");
     //setting coordinates to center the map around (--> currently Whitby, Ontario)
     var center = {
-        lat: 43.898,
-        lng: -78.943
+        lat: 41.4925,
+        lng: -99.9018
     };
 
     //initializing map inside div with ID '#map', setting zoom level and centering location
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6, //the higher the number, the more zoomed in you are
+        zoom: 4, //the higher the number, the more zoomed in you are
         center: center
     });
 
@@ -117,14 +117,14 @@ function initMap() {
 downloadUrl('http://localhost:8888/Arena-Review/php/results.xml', function (data) {
     var xml = data.responseXML;
     console.log("hello from markers")
-    
+
     var markers = xml.documentElement.getElementsByTagName('marker');
-    
+    var count = 1;
     Array.prototype.forEach.call(markers, function (markerElem) {
         var id = markerElem.getAttribute('id');
         var name = markerElem.getAttribute('name');
         var address = markerElem.getAttribute('address');
-        var type = "restaurant";
+        var phone = markerElem.getAttribute('phone');
         var point = new google.maps.LatLng(
             parseFloat(markerElem.getAttribute('lat')),
             parseFloat(markerElem.getAttribute('lon')));
@@ -138,23 +138,28 @@ downloadUrl('http://localhost:8888/Arena-Review/php/results.xml', function (data
         var text = document.createElement('text');
         text.textContent = address
         infowincontent.appendChild(text);
-        var icon = customLabel[type] || {};
+        
+        var label_num = count.toString();
+        
         var marker = new google.maps.Marker({
             map: map,
             position: point,
-            label: icon.label
+            label: label_num
+        }); 
+        var markerInfoWindow = new google.maps.InfoWindow({
+            content: infowincontent
+        });   
+        count+=1;
+        marker.addListener('click', function () {
+            markerInfoWindow.open(map, marker);
         });
+//                marker.addListener('click', function() {
+//  infoWindow.setContent(infowincontent);
+//  infoWindow.open(map, marker);
+//});
     });
 });
-    
-    var customLabel = {
-  restaurant: {
-    label: 'R'
-  },
-  bar: {
-    label: 'B'
-  }
-};
+
     
     
     
