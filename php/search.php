@@ -1,5 +1,3 @@
-<?php include('./server.php'); ?>
-<?php include('./results.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,11 +39,13 @@
                     
                     <input id="loc-city" class="long-input" type="text" placeholder="Location (Default Current Loc.)" name="location"><br><br>
                     
+<!--
                     <div class="input-with-button">
                         <div class="iwb-1"><input class="input-loc" type="text" placeholder="Location (Click Button for Current Loc)" name="search"></div>
                         <div class="iwb-2"><button class="button-loc">My Loc.</button></div>
                     </div>
-                <button type="submit" name="user_search" class="button-submit">SUBMIT</button>
+-->
+                    <button type="submit" name="user_search" class="button-submit">SUBMIT</button>
                 </form>
                 <button class="button-fill-coords">** Use Current Location **</button>
                 

@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    console.log("ready!");
+    //var data = "<?php echo $name?>";
+    console.log("ihihihih");
+    console.log("ready!!!!!!");
     var globalLat = -25.363;
     var globalLong = 131.044;
 
@@ -50,7 +52,7 @@ $(document).ready(function () {
     }
 
     function showError(error) {
-        alert("Error Ocurres");
+        alert("Error Ocurred");
     }
 });
 
@@ -61,7 +63,9 @@ $(document).ready(function () {
 ====================================================== */
 //function is called from results_sample
 function initMap() {
-
+//    var data = "<?php echo $name?>";
+//    console.log(data);
+    console.log("WOOOOOO");
     //setting coordinates to center the map around (--> currently Whitby, Ontario)
     var center = {
         lat: 43.898,
