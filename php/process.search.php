@@ -1,10 +1,15 @@
 <?php
+
+$dom = new DOMDocument("1.0");
+$node = $dom->createElement("markers");
+$parnode = $dom->appendChild($node);
 $sname = "";
 if(isset($_POST['user_search'])){
     $errors   = array();
     $sname     = $_POST['search'];
     $rating   = $_POST['ratings'];
     $location = $_POST['location'];
+    //include_file "tester.php"
 
       if (empty($sname)) {
         array_push($errors, "Name of arena is required");
@@ -30,6 +35,7 @@ if(isset($_POST['user_search'])){
             "name" => $name_str
             ));
             
+            //echo ("<p>This is it".$search_result."</p>");
             $num_results = $search_result->rowCount();
 
         } catch (PDOException $e){
@@ -57,6 +63,19 @@ if(isset($_POST['user_search'])){
                     echo("<i class='fas fa-star'></i>");
             }
              echo('</td><td><a href="tel:'.$current_result[phone].'">'.$current_result[phone].'</a></td></tr>');   
+            
+            $node = $dom->createElement("marker");
+            $newnode = $parnode->appendChild($node);
+            $newnode->setAttribute("id",$current_result[id]);
+            $newnode->setAttribute("name",$current_result[name]);
+            $newnode->setAttribute("rating",$current_result[rating]);
+            $newnode->setAttribute("lat", $current_result[lat]);
+            $newnode->setAttribute("lon", $current_result[lon]);
+            $newnode->setAttribute("address", $current_result[address]);
+            $newnode->setAttribute("city", $current_result[city]);
+            $newnode->setAttribute("state_prov", $current_result[state_prov]);
+            $newnode->setAttribute("country", $current_result[country]);
+            $newnode->setAttribute("phone", $current_result[phone]);
 
 
         }
@@ -67,6 +86,9 @@ if(isset($_POST['user_search'])){
 
     
 }
-
-            
+header('Content-type: text/xml');
+$dom->save("./results.xml");
+//  $xmlfile = $doc->dump_mem();
+//echo $xmlfile;
+          
 ?>

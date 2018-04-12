@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     var href = document.location.href;
     var lastPathSegment = href.substr(href.lastIndexOf('/') + 1); //to find which html page we are on
-    //console.log(lastPathSegment); //for testing purposes
+    //console.log(href); //for testing purposes
     
     //event listener for click on button with class '.button-fill-coords' which triggers function
     //that call geolocation grabber
@@ -75,105 +75,212 @@ function initMap() {
 
     //initializing map inside div with ID '#map', setting zoom level and centering location
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11, //the higher the number, the more zoomed in you are
+        zoom: 6, //the higher the number, the more zoomed in you are
         center: center
     });
 
 
-    /* ===========================
-    --- Arena 1 (Iroquois)
-    =========================== */
+//     downloadUrl('http://localhost:8888/Arena-Review/php/results.php', function (data) {
+//
+//        var xml = data.responseXML;
+//        
+//        var markers = xml.documentElement.getElementsByTagName('marker');
+////        Array.prototype.forEach.call(markers, function (markerElem) {
+////            //var id = markerElem.getAttribute('id');
+////            var name = markerElem.getAttribute('name');
+////            //var address = markerElem.getAttribute('address');
+////            //var type = markerElem.getAttribute('type');
+////            var point = new google.maps.LatLng(
+////                parseFloat(markerElem.getAttribute('lat')),
+////                parseFloat(markerElem.getAttribute('lng')));
+////
+////            var infowincontent = document.createElement('div');
+////            var strong = document.createElement('strong');
+////            strong.textContent = name
+////            infowincontent.appendChild(strong);
+////            infowincontent.appendChild(document.createElement('br'));
+////
+////            var text = document.createElement('text');
+////            text.textContent = address
+////            infowincontent.appendChild(text);
+////            var icon = customLabel[type] || {};
+////            var marker = new google.maps.Marker({
+////                map: map,
+////                position: point,
+////                label: icon.label
+////            });
+////        });
+//    });
+//    
+    
+//http://localhost:8888/Arena-Review/php/results.xml
+downloadUrl('http://localhost:8888/Arena-Review/php/results.xml', function (data) {
+    var xml = data.responseXML;
+    console.log("hello from markers")
+    
+    var markers = xml.documentElement.getElementsByTagName('marker');
+    
+    Array.prototype.forEach.call(markers, function (markerElem) {
+        var id = markerElem.getAttribute('id');
+        var name = markerElem.getAttribute('name');
+        var address = markerElem.getAttribute('address');
+        var type = "restaurant";
+        var point = new google.maps.LatLng(
+            parseFloat(markerElem.getAttribute('lat')),
+            parseFloat(markerElem.getAttribute('lon')));
 
-    //setting coordinates for arena 1 (Iroquois Park Sports Centre)
-    var coords_iroquois = {
-        lat: 43.8620,
-        lng: -78.9428,
-        title: 'Iroquois'
-    };
-    //infobox for arena 1 -- contents filled
-    var infobox_iroquois = '<div class="infobox">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">Iroquois Park Sports Centre</h1>' +
-        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
-        '</div>' +
-        '</div>';
-    //setting contents to an Google Maps infowindow container
-    var infowindow_iroquois = new google.maps.InfoWindow({
-        content: infobox_iroquois
+        var infowincontent = document.createElement('div');
+        var strong = document.createElement('strong');
+        strong.textContent = name
+        infowincontent.appendChild(strong);
+        infowincontent.appendChild(document.createElement('br'));
+
+        var text = document.createElement('text');
+        text.textContent = address
+        infowincontent.appendChild(text);
+        var icon = customLabel[type] || {};
+        var marker = new google.maps.Marker({
+            map: map,
+            position: point,
+            label: icon.label
+        });
     });
-    //placing marker on map for arena 1 (Iroquois Park Sports Centre)
-    var marker_iroquois = new google.maps.Marker({
-        position: coords_iroquois,
-        map: map
-    });
-    //add listener for click function to pop infowindow up
-    marker_iroquois.addListener('click', function () {
-        infowindow_iroquois.open(map, marker_iroquois);
-    });
+});
+    
+    var customLabel = {
+  restaurant: {
+    label: 'R'
+  },
+  bar: {
+    label: 'B'
+  }
+};
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    /* ===========================
+//    --- Arena 1 (Iroquois)
+//    =========================== */
+//
+//    //setting coordinates for arena 1 (Iroquois Park Sports Centre)
+//    var coords_iroquois = {
+//        lat: 43.8620,
+//        lng: -78.9428,
+//        title: 'Iroquois'
+//    };
+//    //infobox for arena 1 -- contents filled
+//    var infobox_iroquois = '<div class="infobox">' +
+//        '<div id="siteNotice">' +
+//        '</div>' +
+//        '<h1 id="firstHeading" class="firstHeading">Iroquois Park Sports Centre</h1>' +
+//        '<div id="bodyContent">' + '500 Victoria St W<br>' + '<a href="tel:905-668-7765">(905) 668-7765</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
+//        '</div>' +
+//        '</div>';
+//    //setting contents to an Google Maps infowindow container
+//    var infowindow_iroquois = new google.maps.InfoWindow({
+//        content: infobox_iroquois
+//    });
+//    //placing marker on map for arena 1 (Iroquois Park Sports Centre)
+//    var marker_iroquois = new google.maps.Marker({
+//        position: coords_iroquois,
+//        map: map
+//    });
+//    //add listener for click function to pop infowindow up
+//    marker_iroquois.addListener('click', function () {
+//        infowindow_iroquois.open(map, marker_iroquois);
+//    });
 
 
-    /* ===========================
-    --- Arena 2 (McKinney)
-    =========================== */
-    //setting coordinates for arena 2 (McKinney Centre)
-    var coords_mckinney = {
-        lat: 43.9208,
-        lng: -78.9553
-    };
-    //infobox for arena 2 -- contents filled
-    var infobox_mckinney = '<div class="infobox">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">McKinney Centre</h1>' +
-        '<div id="bodyContent">' + '222 McKinney Dr<br>' + '<a href="tel:905-655-2203">(905) 655-2203</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
-        '</div>' +
-        '</div>';
-    //setting contents to an Google Maps infowindow container
-    var infowindow_mckinney = new google.maps.InfoWindow({
-        content: infobox_mckinney
-    });
-    //placing marker on map for arena 2 (McKinney Centre)
-    var marker_mckinney = new google.maps.Marker({
-        position: coords_mckinney,
-        map: map
-    });
-    //add listener for click function to pop infowindow up
-    marker_mckinney.addListener('click', function () {
-        infowindow_mckinney.open(map, marker_mckinney);
-    });
+//    /* ===========================
+//    --- Arena 2 (McKinney)
+//    =========================== */
+//    //setting coordinates for arena 2 (McKinney Centre)
+//    var coords_mckinney = {
+//        lat: 43.9208,
+//        lng: -78.9553
+//    };
+//    //infobox for arena 2 -- contents filled
+//    var infobox_mckinney = '<div class="infobox">' +
+//        '<div id="siteNotice">' +
+//        '</div>' +
+//        '<h1 id="firstHeading" class="firstHeading">McKinney Centre</h1>' +
+//        '<div id="bodyContent">' + '222 McKinney Dr<br>' + '<a href="tel:905-655-2203">(905) 655-2203</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
+//        '</div>' +
+//        '</div>';
+//    //setting contents to an Google Maps infowindow container
+//    var infowindow_mckinney = new google.maps.InfoWindow({
+//        content: infobox_mckinney
+//    });
+//    //placing marker on map for arena 2 (McKinney Centre)
+//    var marker_mckinney = new google.maps.Marker({
+//        position: coords_mckinney,
+//        map: map
+//    });
+//    //add listener for click function to pop infowindow up
+//    marker_mckinney.addListener('click', function () {
+//        infowindow_mckinney.open(map, marker_mckinney);
+//    });
 
 
-    /* ===========================
-    --- Arena 3 (Vipond)
-    =========================== */
-    //setting coordinates for arena 3 (Luther Vipond Memorial Arena)
-    var coords_vipond = {
-        lat: 43.9542,
-        lng: -78.9558
-    };
-    //infobox for arena 3 -- contents filled
-    var infobox_vipond = '<div class="infobox">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">Luther Vipond Memorial Arena</h1>' +
-        '<div id="bodyContent">' + '67 Winchester Rd<br>' + '<a href="tel:905-655-4571">(905) 655-4571</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
-        '</div>' +
-        '</div>';
-    //setting contents to an Google Maps infowindow container
-    var infowindow_vipond = new google.maps.InfoWindow({
-        content: infobox_vipond
-    });
-    //placing marker on map for arena 3 (Luther Vipond Memorial Arena)
-    var marker_vipond = new google.maps.Marker({
-        position: coords_vipond,
-        map: map
-    });
-    //add listener for click function to pop infowindow up
-    marker_vipond.addListener('click', function () {
-        infowindow_vipond.open(map, marker_vipond);
-    });
+//    /* ===========================
+//    --- Arena 3 (Vipond)
+//    =========================== */
+//    //setting coordinates for arena 3 (Luther Vipond Memorial Arena)
+//    var coords_vipond = {
+//        lat: 43.9542,
+//        lng: -78.9558
+//    };
+//    //infobox for arena 3 -- contents filled
+//    var infobox_vipond = '<div class="infobox">' +
+//        '<div id="siteNotice">' +
+//        '</div>' +
+//        '<h1 id="firstHeading" class="firstHeading">Luther Vipond Memorial Arena</h1>' +
+//        '<div id="bodyContent">' + '67 Winchester Rd<br>' + '<a href="tel:905-655-4571">(905) 655-4571</a><br><br>' + '<a href="./individual_sample.html">Link: Individual Page</a>' +
+//        '</div>' +
+//        '</div>';
+//    //setting contents to an Google Maps infowindow container
+//    var infowindow_vipond = new google.maps.InfoWindow({
+//        content: infobox_vipond
+//    });
+//    //placing marker on map for arena 3 (Luther Vipond Memorial Arena)
+//    var marker_vipond = new google.maps.Marker({
+//        position: coords_vipond,
+//        map: map
+//    });
+//    //add listener for click function to pop infowindow up
+//    marker_vipond.addListener('click', function () {
+//        infowindow_vipond.open(map, marker_vipond);
+//    });
 }
+
+
+
 
 /* ======================================================
 --- Individual Sample Map Configuration
@@ -195,3 +302,21 @@ function initMapInd() {
         map: map
     });
 }
+
+function downloadUrl(url,callback) {
+ var request = window.ActiveXObject ?
+     new ActiveXObject('Microsoft.XMLHTTP') :
+     new XMLHttpRequest;
+
+ request.onreadystatechange = function() {
+   if (request.readyState == 4) {
+     request.onreadystatechange = doNothing;
+     callback(request, request.status);
+   }
+ };
+
+ request.open('GET', url, true);
+ request.send(null);
+}
+
+ function doNothing() {console.log("doing nothing...");}
