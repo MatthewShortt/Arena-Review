@@ -148,7 +148,7 @@ main .container-form input.long-input {
 }
 
 main .container-form input.long-input,
-main .container-form input.name {
+main .container-form input.name, main .container-form input.locall {
     border: 2px solid;
     border-radius: 4px;
 }
@@ -159,6 +159,10 @@ main .container-form input:focus {
 
 main .container-form input.name {
     width: 40%;
+}
+
+main .container-form input.locall{
+    width: 30%;
 }
 
 main .container-form input.gender {
@@ -456,7 +460,7 @@ main .container-form input[type="file"] {
 }
 
 @media (max-width:372px) {
-    main .container-form input.name {
+    main .container-form input.name, main .container-form input.locall{
         width: 100%;
     }
 

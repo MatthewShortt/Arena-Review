@@ -26,7 +26,7 @@
                 <h1>Search</h1>
                 <form method="post" action="results.php">
 
-                    <input class="long-input" type="text" required placeholder="Search.." name="search"><br><br>
+                    <input class="long-input" type="text" required placeholder="Search Arena Name.." name="search"><br><br>
                     <select name="ratings">
                        <option value="default">Select a Rating</option>
                         <option value="5">5 stars</option>
@@ -36,6 +36,12 @@
                         <option value="1">1 star</option>
                         <option value="0">0 stars</option>
                     </select><br><br>
+                    <input class="locall" type="text" name="city" placeholder="city">
+                    <input class="locall" type="text" name="state_prov" placeholder="state/prov">
+                    <input class="locall" type="text" name="country" placeholder="country">
+                    <input id="input-lat" class="locall" type="text" name="lat" placeholder="lat">
+                    <input id="input-lon" class="locall" type="text" name="lon" placeholder="lon">
+                    
                     
                     <input id="loc-city" class="long-input" type="text" placeholder="Location (Default Current Loc.)" name="location"><br><br>
                     

@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     var href = document.location.href;
     var lastPathSegment = href.substr(href.lastIndexOf('/') + 1); //to find which html page we are on
-    //console.log(href); //for testing purposes
+    console.log(lastPathSegment); //for testing purposes
     
     //event listener for click on button with class '.button-fill-coords' which triggers function
     //that call geolocation grabber
@@ -39,14 +39,18 @@ $(document).ready(function () {
             $("#submit-lat").val(position.coords.latitude);
             $("#submit-long").val(position.coords.longitude);
             $(".button-fill-coords").html("Present Location used for Lat/Long");
-        } else if (lastPathSegment == 'search.html') {
-            if (position.coords.latitude > 43.2 && position.coords.latitude < 43.3 && position.coords.longitude < -79.8 && position.coords.longitude > -79.9) {
-                $("#loc-city").val('Hamilton, Ontario');
-            }
-            else{
-                $("#loc-city").val('Outside of Hamilton');
-            }
-            $(".button-fill-coords").html("Present Location used for City");
+        } else if (lastPathSegment == 'search.php') {
+//            if (position.coords.latitude > 43.2 && position.coords.latitude < 43.3 && position.coords.longitude < -79.8 && position.coords.longitude > -79.9) {
+//                $("#loc-city").val('Hamilton, Ontario');
+//            }
+//            else{
+//                $("#loc-city").val('Outside of Hamilton');
+//            }
+            $("#input-lat").val(position.coords.latitude);
+            //$("#input-lat").html(position.coords.latitude);
+            $("#input-lon").val(position.coords.longitude);
+            //$("#input-lon").html(position.coords.latitude);
+            $(".button-fill-coords").html("Present Location used for Lat/Lon");
         }
 
         

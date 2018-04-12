@@ -3,7 +3,7 @@
     $node = $dom->createElement("markers");
     $parnode = $dom->appendChild($node);
 
-
+    
 
     //echo("<h1>THis is nust</h1>");
     $pdoResults = new PDO('mysql:host=localhost;dbname=rinkdb', 'admin_rinkdb', 'rinkmaster');
