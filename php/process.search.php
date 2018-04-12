@@ -20,7 +20,7 @@ if(isset($_POST['user_search'])){
         try{
             //$search_result = $pdoResults->prepare('SELECT * FROM `objects` WHERE `name` LIKE %:name% OR `rating`= :rating OR `city` LIKE %:location% OR `state` LIKE %:location% OR `country` LIKE %:location%');
             $search_result = $pdoResults->prepare('SELECT * FROM `objects` WHERE `name` LIKE :name');
-
+            //echo htmlspecialchars($search_result);
 //            $search_result->execute(array(
 //            "name" => $name,
 //            "rating" => $rating,

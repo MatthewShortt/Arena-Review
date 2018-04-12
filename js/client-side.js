@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    //var data = "<?php echo $name?>";
-    console.log("ihihihih");
+    var data = "<?php echo $name?>";
+    console.log(data);
+    console.log("ihihihi!!!!");
     console.log("ready!!!!!!");
     var globalLat = -25.363;
     var globalLong = 131.044;
