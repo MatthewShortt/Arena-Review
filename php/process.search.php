@@ -57,7 +57,7 @@ if(isset($_POST['user_search'])){
             $addr_str .= ", ";
             $addr_str .= $current_result[country];
             echo('<tr><td rowspan="2"><a href="./individual_sample.html"><img src="'.$current_result[image_url].'" alt="Photo of '.$current_result[image_url].'"></a></td>
-                <td><a href="./individual_sample.html">'.$current_result[name].'</a></td>
+                <td><a href="./object.php?">'.$current_result[name].'</a></td>
                 <td>'.$addr_str.'</td></tr><tr><td>');
             for($x=0; $x < $current_result[rating]; $x++){
                     echo("<i class='fas fa-star'></i>");

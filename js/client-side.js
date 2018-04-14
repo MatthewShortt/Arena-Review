@@ -10,6 +10,7 @@ $(document).ready(function () {
     var lastPathSegment = href.substr(href.lastIndexOf('/') + 1); //to find which html page we are on
     console.log(lastPathSegment); //for testing purposes
     
+    
     //event listener for click on button with class '.button-fill-coords' which triggers function
     //that call geolocation grabber
     $(".button-fill-coords").click(function () {
@@ -120,8 +121,6 @@ function initMap() {
 //http://localhost:8888/Arena-Review/php/results.xml
 downloadUrl('http://localhost:8888/Arena-Review/php/results.xml', function (data) {
     var xml = data.responseXML;
-    console.log("hello from markers")
-
     var markers = xml.documentElement.getElementsByTagName('marker');
     var count = 1;
     Array.prototype.forEach.call(markers, function (markerElem) {
@@ -157,10 +156,6 @@ downloadUrl('http://localhost:8888/Arena-Review/php/results.xml', function (data
         marker.addListener('click', function () {
             markerInfoWindow.open(map, marker);
         });
-//                marker.addListener('click', function() {
-//  infoWindow.setContent(infowincontent);
-//  infoWindow.open(map, marker);
-//});
     });
 });
 

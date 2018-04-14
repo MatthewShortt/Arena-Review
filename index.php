@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <?php include('./head.inc.php'); ?>
+   <?php include('./php/head.inc.index.php'); ?>
 </head>
 
 <body>
@@ -10,25 +10,25 @@
         <header>
             <nav>
                 <div class="nav-title"><a href="./index.php"><i class="fas fa-rocket"></i>Rink Review</a></div>
-                <div class="nav-review"><a href="./submission.php"><i class="fas fa-pencil-alt"></i><span class="nav-block"> Write Review</span></a></div>
+                <div class="nav-review"><a href="./php/submission.php"><i class="fas fa-pencil-alt"></i><span class="nav-block"> Write Review</span></a></div>
                 <div class="nav-favs"><a href="#"><i class="far fa-star"></i><span class="nav-block"> My Favs</span></a></div>
-                <div class="nav-search"><a href="./search.php"><i class="fas fa-search"></i><span class="nav-block"> Search</span></a></div>
-                <div class="nav-user"><a href="./registration.php"><i class="fas fa-user-circle"></i></a></div>
+                <div class="nav-search"><a href="./php/search.php"><i class="fas fa-search"></i><span class="nav-block"> Search</span></a></div>
+                <div class="nav-user"><a href="./php/registration.php"><i class="fas fa-user-circle"></i></a></div>
             </nav>
         </header>
 
         <main>
             <div class="index-blurb">
                 <br>
-                <img src="../favicon/android-icon-192x192.png" alt="website logo">
+                <img src="./favicon/android-icon-192x192.png" alt="website logo">
                 <h1>Welcome to Rink Review, a website that allows users to contribute and view reviews on sports arenas.</h1>
                 <h2>This site is currently under construction.</h2>
                 <h3>The following pages can be inidvidually viewed:</h3>
-                <button class="button-submit"><a href="./registration.php"><i class="fas fa-object-ungroup"></i><span> Registration</span></a></button>
-                <button class="button-submit"><a href="./search.php"><i class="fas fa-object-ungroup"></i><span> Search</span></a></button>
-                <button class="button-submit"><a href="./object.php"><i class="fas fa-object-ungroup"></i><span> Object Page</span></a></button>
-                <button class="button-submit"><a href="./submission.php"><i class="fas fa-object-ungroup"></i><span> Submission</span></a></button>
-                <button class="button-submit"><a href="./results.php"><i class="fas fa-object-ungroup"></i><span> Results Page</span></a></button>
+                <button class="button-submit"><a href="./php/registration.php"><i class="fas fa-object-ungroup"></i><span> Registration</span></a></button>
+                <button class="button-submit"><a href="./php/search.php"><i class="fas fa-object-ungroup"></i><span> Search</span></a></button>
+                <button class="button-submit"><a href="./php/object.php"><i class="fas fa-object-ungroup"></i><span> Object Page</span></a></button>
+                <button class="button-submit"><a href="./php/submission.php"><i class="fas fa-object-ungroup"></i><span> Submission</span></a></button>
+                <button class="button-submit"><a href="./php/results.php"><i class="fas fa-object-ungroup"></i><span> Results Page</span></a></button>
 
             </div>
             
