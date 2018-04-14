@@ -16,7 +16,6 @@
                 <div class="nav-user"><a href="./php/registration.php"><i class="fas fa-user-circle"></i></a></div>
             </nav>
         </header>
-
         <main>
             <div class="index-blurb">
                 <br>

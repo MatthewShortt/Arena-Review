@@ -14,7 +14,6 @@ if(isset($_POST['user_search'])){
       if (empty($sname)) {
         array_push($errors, "Name of arena is required");
       }
-
     $pdoResults = new PDO('mysql:host=localhost;dbname=rinkdb', 'admin_rinkdb', 'rinkmaster');
 ////    //$exist_search = 0;
     if (count($errors) == 0) {
